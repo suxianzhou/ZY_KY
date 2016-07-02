@@ -623,12 +623,11 @@
             
             if (limit.integerValue >= 100)
             {
-                AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+//                AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+//                
+//                RWTabBarViewController *tabBarController =
+//                        (RWTabBarViewController *)delegate.window.rootViewController;
                 
-                RWTabBarViewController *tabBarController =
-                        (RWTabBarViewController *)delegate.window.rootViewController;
-                
-                [tabBarController quack];
             }
             
             [[RWDeployManager defaultManager] setDeployValue:limit

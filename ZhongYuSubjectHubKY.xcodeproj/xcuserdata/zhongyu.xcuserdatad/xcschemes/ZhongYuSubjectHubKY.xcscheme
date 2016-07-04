@@ -32,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12EEAE631CE853C50076BACB"
-               BuildableName = "ZhongYuSubjectHubKYTests.xctest"
-               BlueprintName = "ZhongYuSubjectHubKYTests"
+               BlueprintIdentifier = "12F683A91CE8646D0025BBF0"
+               BuildableName = "ZhongYuSubjectHubKYTests copy.xctest"
+               BlueprintName = "ZhongYuSubjectHubKYTests copy"
                ReferencedContainer = "container:ZhongYuSubjectHubKY.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -42,9 +42,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "12F683A91CE8646D0025BBF0"
-               BuildableName = "ZhongYuSubjectHubKYTests copy.xctest"
-               BlueprintName = "ZhongYuSubjectHubKYTests copy"
+               BlueprintIdentifier = "12EEAE631CE853C50076BACB"
+               BuildableName = "ZhongYuSubjectHubKYTests.xctest"
+               BlueprintName = "ZhongYuSubjectHubKYTests"
                ReferencedContainer = "container:ZhongYuSubjectHubKY.xcodeproj">
             </BuildableReference>
          </TestableReference>

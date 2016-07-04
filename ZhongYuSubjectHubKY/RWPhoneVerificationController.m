@@ -9,8 +9,7 @@
 #import "RWPhoneVerificationController.h"
 #import "RWLoginTableViewCell.h"
 #import "RWRequsetManager+UserLogin.h"
-#import "RWNewRegisterViewController.h"
-#import "RWForGotPWViewController.h"
+#import "RWPassWordBaseViewController.h"
 
 @interface RWPhoneVerificationController ()
 
@@ -299,9 +298,13 @@ static NSString *const buttonCell = @"buttonCell";
 /**
  *  点击忘记密码时跳转
  */
--(void)buttonClickWithPW:(UIButton *)button{
-    RWForGotPWViewController * FGVC=[[RWForGotPWViewController alloc]init];
-    [self.navigationController pushViewController:FGVC animated:YES];
+-(void)buttonClickWithPW:(UIButton *)button
+{
+    RWPassWordBaseViewController *base = [[RWPassWordBaseViewController alloc] init];
+    
+    base.typePassWord = TypeForgetPassWord;
+    
+    [self.navigationController pushViewController:base animated:YES];
 }
 
 
@@ -323,7 +326,7 @@ static NSString *const buttonCell = @"buttonCell";
         return self.view.frame.size.height / 2.5 - 55 * 2;
     }
     
-    return  40; //self.view.frame.size.height * 0.02;
+    return  40;
 }
 /**
  *  组透视图
@@ -413,9 +416,11 @@ static NSString *const buttonCell = @"buttonCell";
  */
 -(void)buttonWithRegister
 {
-    RWNewRegisterViewController * registerVC=[[RWNewRegisterViewController alloc]init];
-    [ self.navigationController pushViewController:registerVC animated:YES
-     ];
+    RWPassWordBaseViewController *base = [[RWPassWordBaseViewController alloc] init];
+    
+    base.typePassWord = TypeRegisterPassWord;
+    
+    [self.navigationController pushViewController:base animated:YES];
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField

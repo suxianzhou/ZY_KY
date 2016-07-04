@@ -15,6 +15,7 @@
 		122385EF1CF42B26003F98FB /* RWCountDownController.m in Sources */ = {isa = PBXBuildFile; fileRef = 122385EE1CF42B26003F98FB /* RWCountDownController.m */; };
 		122386311CF45136003F98FB /* RWPickerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 122386301CF45136003F98FB /* RWPickerViewCell.m */; };
 		122386341CF56144003F98FB /* RWDeployManager+DateProcess.m in Sources */ = {isa = PBXBuildFile; fileRef = 122386331CF56144003F98FB /* RWDeployManager+DateProcess.m */; };
+		123D2AF81D2A59E900A5C1BF /* RWPassWordBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 123D2AF71D2A59E900A5C1BF /* RWPassWordBaseViewController.m */; };
 		125B61751D14032C00318CCD /* Xingkai.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 125CB20C1D13E9F600AC730F /* Xingkai.ttc */; };
 		125CB20E1D13EA2A00AC730F /* ClockSound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 125CB20D1D13EA2A00AC730F /* ClockSound2.mp3 */; };
 		125CB2111D13F0DD00AC730F /* Loginw.png in Resources */ = {isa = PBXBuildFile; fileRef = 125CB20F1D13F0DD00AC730F /* Loginw.png */; };
@@ -200,7 +201,6 @@
 		1261698D1D10FAF70055438B /* UMComTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 126168F71D10FAF70055438B /* UMComTools.m */; };
 		1263F5C01CDAF9A80089EC9F /* zhongyuEDU.png in Resources */ = {isa = PBXBuildFile; fileRef = 1263F5BF1CDAF9A80089EC9F /* zhongyuEDU.png */; };
 		1263F5DC1CDB12AD0089EC9F /* RWMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1263F5CB1CDB12AD0089EC9F /* RWMoreViewController.m */; };
-		1263F6561CDB14C10089EC9F /* RWLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1263F64D1CDB14C10089EC9F /* RWLoginViewController.m */; };
 		1263F6631CDB215E0089EC9F /* noti.png in Resources */ = {isa = PBXBuildFile; fileRef = 1263F65B1CDB215E0089EC9F /* noti.png */; };
 		1263F6641CDB215E0089EC9F /* set.png in Resources */ = {isa = PBXBuildFile; fileRef = 1263F65C1CDB215E0089EC9F /* set.png */; };
 		1263F6651CDB215E0089EC9F /* main.png in Resources */ = {isa = PBXBuildFile; fileRef = 1263F65D1CDB215E0089EC9F /* main.png */; };
@@ -210,8 +210,6 @@
 		1263F6691CDB215E0089EC9F /* set_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1263F6611CDB215E0089EC9F /* set_s.png */; };
 		1263F66A1CDB215E0089EC9F /* error_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 1263F6621CDB215E0089EC9F /* error_s.png */; };
 		1263F6701CDB29000089EC9F /* RWTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1263F66F1CDB29000089EC9F /* RWTabBarViewController.m */; };
-		1263F6A01CDB33DF0089EC9F /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1263F69E1CDB33DF0089EC9F /* MOBFoundation.framework */; };
-		1263F6A11CDB33DF0089EC9F /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1263F69F1CDB33DF0089EC9F /* SMS_SDK.framework */; };
 		1263F6A31CDB34090089EC9F /* disclosureIndicator.png in Resources */ = {isa = PBXBuildFile; fileRef = 1263F6A21CDB34090089EC9F /* disclosureIndicator.png */; };
 		1263F6AA1CDB34A50089EC9F /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1263F6A91CDB34A50089EC9F /* libicucore.tbd */; };
 		1263F6AC1CDB34B90089EC9F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1263F6AB1CDB34B90089EC9F /* libz.tbd */; };
@@ -335,10 +333,6 @@
 		12ACD8601D274B7F00B34C3C /* script.js in Resources */ = {isa = PBXBuildFile; fileRef = 12ACD7FD1D274B7F00B34C3C /* script.js */; };
 		12ACD8611D274B7F00B34C3C /* libCCSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 12ACD8051D274B7F00B34C3C /* libCCSDK.a */; };
 		12ACD8671D274C3800B34C3C /* RWPhoneVerificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12ACD8661D274C3800B34C3C /* RWPhoneVerificationController.m */; };
-		12ACD86C1D274C4700B34C3C /* RWNewRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12ACD8691D274C4700B34C3C /* RWNewRegisterViewController.m */; };
-		12ACD86D1D274C4700B34C3C /* RWAboutLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12ACD86B1D274C4700B34C3C /* RWAboutLoginViewController.m */; };
-		12ACD8721D274C5400B34C3C /* RWForGotPWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12ACD86F1D274C5400B34C3C /* RWForGotPWViewController.m */; };
-		12ACD8731D274C5400B34C3C /* RWUpdtePWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12ACD8711D274C5400B34C3C /* RWUpdtePWViewController.m */; };
 		12ACD8751D27504900B34C3C /* goindex.png in Resources */ = {isa = PBXBuildFile; fileRef = 12ACD8741D27504900B34C3C /* goindex.png */; };
 		12B78E1B1D1421B4005416E1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12B78E1A1D1421B4005416E1 /* Assets.xcassets */; };
 		12BA9EB71CE60FC7004B5C77 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12BA9EB61CE60FC7004B5C77 /* AudioToolbox.framework */; };
@@ -373,9 +367,6 @@
 		12EE61B91CE1737E00ADCC51 /* RWRequsetManager+UserLogin.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE61B81CE1737E00ADCC51 /* RWRequsetManager+UserLogin.m */; };
 		12EE61BC1CE1762A00ADCC51 /* RWDeployManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE61BB1CE1762A00ADCC51 /* RWDeployManager.m */; };
 		12EE61C01CE181AD00ADCC51 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE61BF1CE181AD00ADCC51 /* NSData+Base64.m */; };
-		12EE61C41CE1BCEA00ADCC51 /* RWRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE61C31CE1BCEA00ADCC51 /* RWRegisterController.m */; };
-		12EE61CA1CE1C5A900ADCC51 /* RWVerificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE61C91CE1C5A900ADCC51 /* RWVerificationController.m */; };
-		12EE61D01CE1DAE200ADCC51 /* RWSetPasswordController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EE61CF1CE1DAE200ADCC51 /* RWSetPasswordController.m */; };
 		12EEAE5F1CE811B40076BACB /* RWFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EEAE5E1CE811B40076BACB /* RWFeedbackViewController.m */; };
 		12EEAE671CE853C50076BACB /* ZhongYuSubjectHubKYTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 12EEAE661CE853C50076BACB /* ZhongYuSubjectHubKYTests.m */; };
 		12EFFD5F1CD8A0C00030C74F /* Collect.png in Resources */ = {isa = PBXBuildFile; fileRef = 12EFFD521CD8A0C00030C74F /* Collect.png */; };
@@ -520,6 +511,8 @@
 		122386301CF45136003F98FB /* RWPickerViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPickerViewCell.m; sourceTree = "<group>"; };
 		122386321CF56144003F98FB /* RWDeployManager+DateProcess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RWDeployManager+DateProcess.h"; sourceTree = "<group>"; };
 		122386331CF56144003F98FB /* RWDeployManager+DateProcess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RWDeployManager+DateProcess.m"; sourceTree = "<group>"; };
+		123D2AF61D2A59E900A5C1BF /* RWPassWordBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPassWordBaseViewController.h; sourceTree = "<group>"; };
+		123D2AF71D2A59E900A5C1BF /* RWPassWordBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPassWordBaseViewController.m; sourceTree = "<group>"; };
 		125CB20C1D13E9F600AC730F /* Xingkai.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = Xingkai.ttc; path = ZhongYuSubjectHubKY/Xingkai.ttc; sourceTree = "<group>"; };
 		125CB20D1D13EA2A00AC730F /* ClockSound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ClockSound2.mp3; sourceTree = "<group>"; };
 		125CB20F1D13F0DD00AC730F /* Loginw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Loginw.png; sourceTree = "<group>"; };
@@ -914,8 +907,6 @@
 		1263F5BF1CDAF9A80089EC9F /* zhongyuEDU.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhongyuEDU.png; sourceTree = "<group>"; };
 		1263F5CA1CDB12AD0089EC9F /* RWMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWMoreViewController.h; sourceTree = "<group>"; };
 		1263F5CB1CDB12AD0089EC9F /* RWMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWMoreViewController.m; sourceTree = "<group>"; };
-		1263F64C1CDB14C10089EC9F /* RWLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWLoginViewController.h; sourceTree = "<group>"; };
-		1263F64D1CDB14C10089EC9F /* RWLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWLoginViewController.m; sourceTree = "<group>"; };
 		1263F65B1CDB215E0089EC9F /* noti.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noti.png; sourceTree = "<group>"; };
 		1263F65C1CDB215E0089EC9F /* set.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = set.png; sourceTree = "<group>"; };
 		1263F65D1CDB215E0089EC9F /* main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = main.png; sourceTree = "<group>"; };
@@ -926,8 +917,6 @@
 		1263F6621CDB215E0089EC9F /* error_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error_s.png; sourceTree = "<group>"; };
 		1263F66E1CDB29000089EC9F /* RWTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RWTabBarViewController.h; path = ZhongYuSubjectHubKY/RWTabBarViewController.h; sourceTree = "<group>"; };
 		1263F66F1CDB29000089EC9F /* RWTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RWTabBarViewController.m; path = ZhongYuSubjectHubKY/RWTabBarViewController.m; sourceTree = "<group>"; };
-		1263F69E1CDB33DF0089EC9F /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
-		1263F69F1CDB33DF0089EC9F /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
 		1263F6A21CDB34090089EC9F /* disclosureIndicator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = disclosureIndicator.png; path = ../disclosureIndicator.png; sourceTree = "<group>"; };
 		1263F6A91CDB34A50089EC9F /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
 		1263F6AB1CDB34B90089EC9F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -1071,14 +1060,6 @@
 		12ACD8051D274B7F00B34C3C /* libCCSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCCSDK.a; sourceTree = "<group>"; };
 		12ACD8651D274C3800B34C3C /* RWPhoneVerificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWPhoneVerificationController.h; sourceTree = "<group>"; };
 		12ACD8661D274C3800B34C3C /* RWPhoneVerificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWPhoneVerificationController.m; sourceTree = "<group>"; };
-		12ACD8681D274C4700B34C3C /* RWNewRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWNewRegisterViewController.h; sourceTree = "<group>"; };
-		12ACD8691D274C4700B34C3C /* RWNewRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWNewRegisterViewController.m; sourceTree = "<group>"; };
-		12ACD86A1D274C4700B34C3C /* RWAboutLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWAboutLoginViewController.h; sourceTree = "<group>"; };
-		12ACD86B1D274C4700B34C3C /* RWAboutLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWAboutLoginViewController.m; sourceTree = "<group>"; };
-		12ACD86E1D274C5400B34C3C /* RWForGotPWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWForGotPWViewController.h; sourceTree = "<group>"; };
-		12ACD86F1D274C5400B34C3C /* RWForGotPWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWForGotPWViewController.m; sourceTree = "<group>"; };
-		12ACD8701D274C5400B34C3C /* RWUpdtePWViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWUpdtePWViewController.h; sourceTree = "<group>"; };
-		12ACD8711D274C5400B34C3C /* RWUpdtePWViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWUpdtePWViewController.m; sourceTree = "<group>"; };
 		12ACD8741D27504900B34C3C /* goindex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goindex.png; sourceTree = "<group>"; };
 		12B78E1A1D1421B4005416E1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12BA9EB61CE60FC7004B5C77 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -1129,12 +1110,6 @@
 		12EE61BE1CE181AD00ADCC51 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		12EE61BF1CE181AD00ADCC51 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		12EE61C11CE1860500ADCC51 /* RWDeployIndex.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RWDeployIndex.h; sourceTree = "<group>"; };
-		12EE61C21CE1BCEA00ADCC51 /* RWRegisterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWRegisterController.h; sourceTree = "<group>"; };
-		12EE61C31CE1BCEA00ADCC51 /* RWRegisterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWRegisterController.m; sourceTree = "<group>"; };
-		12EE61C81CE1C5A900ADCC51 /* RWVerificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWVerificationController.h; sourceTree = "<group>"; };
-		12EE61C91CE1C5A900ADCC51 /* RWVerificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWVerificationController.m; sourceTree = "<group>"; };
-		12EE61CE1CE1DAE200ADCC51 /* RWSetPasswordController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWSetPasswordController.h; sourceTree = "<group>"; };
-		12EE61CF1CE1DAE200ADCC51 /* RWSetPasswordController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWSetPasswordController.m; sourceTree = "<group>"; };
 		12EEAE5D1CE811B40076BACB /* RWFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RWFeedbackViewController.h; sourceTree = "<group>"; };
 		12EEAE5E1CE811B40076BACB /* RWFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RWFeedbackViewController.m; sourceTree = "<group>"; };
 		12EEAE641CE853C50076BACB /* ZhongYuSubjectHubKYTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZhongYuSubjectHubKYTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1365,8 +1340,6 @@
 				12F6EB301CD9FA1900CBA632 /* WebKit.framework in Frameworks */,
 				12EB5EB61CEFEF870081F46B /* jpush-ios-2.1.6.a in Frameworks */,
 				12FFF1551CCF4427003F58E2 /* libsqlite3.tbd in Frameworks */,
-				1263F6A01CDB33DF0089EC9F /* MOBFoundation.framework in Frameworks */,
-				1263F6A11CDB33DF0089EC9F /* SMS_SDK.framework in Frameworks */,
 				12FFF0D01CCF334E003F58E2 /* CoreData.framework in Frameworks */,
 				DDD17CEB706B62985CAD6EC8 /* libPods.a in Frameworks */,
 			);
@@ -1394,21 +1367,6 @@
 			);
 			name = Community;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		122385E91CF3DB2D003F98FB /* Abandoned */ = {
-			isa = PBXGroup;
-			children = (
-				1263F64C1CDB14C10089EC9F /* RWLoginViewController.h */,
-				1263F64D1CDB14C10089EC9F /* RWLoginViewController.m */,
-				12EE61C21CE1BCEA00ADCC51 /* RWRegisterController.h */,
-				12EE61C31CE1BCEA00ADCC51 /* RWRegisterController.m */,
-				12EE61C81CE1C5A900ADCC51 /* RWVerificationController.h */,
-				12EE61C91CE1C5A900ADCC51 /* RWVerificationController.m */,
-				12EE61CE1CE1DAE200ADCC51 /* RWSetPasswordController.h */,
-				12EE61CF1CE1DAE200ADCC51 /* RWSetPasswordController.m */,
-			);
-			name = Abandoned;
 			sourceTree = "<group>";
 		};
 		125D99091CD0784700871ED4 /* RWDataBase */ = {
@@ -1560,9 +1518,6 @@
 				12DFC6311D138D8E00C73FDF /* RWRegisterViewController.h */,
 				12DFC6321D138D8F00C73FDF /* RWRegisterViewController.m */,
 				12ACD8621D274BF800B34C3C /* LoginViews */,
-				12ACD8631D274C0800B34C3C /* RegisterViews */,
-				12ACD8641D274C1700B34C3C /* ResetViews */,
-				122385E91CF3DB2D003F98FB /* Abandoned */,
 			);
 			name = LoginRegisterView;
 			sourceTree = "<group>";
@@ -2446,15 +2401,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		1263F69D1CDB33DF0089EC9F /* SMS_SDK */ = {
-			isa = PBXGroup;
-			children = (
-				1263F69E1CDB33DF0089EC9F /* MOBFoundation.framework */,
-				1263F69F1CDB33DF0089EC9F /* SMS_SDK.framework */,
-			);
-			path = SMS_SDK;
-			sourceTree = "<group>";
-		};
 		129B65651CD9DF26007A7224 /* RWBanners */ = {
 			isa = PBXGroup;
 			children = (
@@ -2664,30 +2610,10 @@
 			children = (
 				12ACD8651D274C3800B34C3C /* RWPhoneVerificationController.h */,
 				12ACD8661D274C3800B34C3C /* RWPhoneVerificationController.m */,
+				123D2AF61D2A59E900A5C1BF /* RWPassWordBaseViewController.h */,
+				123D2AF71D2A59E900A5C1BF /* RWPassWordBaseViewController.m */,
 			);
 			name = LoginViews;
-			sourceTree = "<group>";
-		};
-		12ACD8631D274C0800B34C3C /* RegisterViews */ = {
-			isa = PBXGroup;
-			children = (
-				12ACD8681D274C4700B34C3C /* RWNewRegisterViewController.h */,
-				12ACD8691D274C4700B34C3C /* RWNewRegisterViewController.m */,
-				12ACD86A1D274C4700B34C3C /* RWAboutLoginViewController.h */,
-				12ACD86B1D274C4700B34C3C /* RWAboutLoginViewController.m */,
-			);
-			name = RegisterViews;
-			sourceTree = "<group>";
-		};
-		12ACD8641D274C1700B34C3C /* ResetViews */ = {
-			isa = PBXGroup;
-			children = (
-				12ACD86E1D274C5400B34C3C /* RWForGotPWViewController.h */,
-				12ACD86F1D274C5400B34C3C /* RWForGotPWViewController.m */,
-				12ACD8701D274C5400B34C3C /* RWUpdtePWViewController.h */,
-				12ACD8711D274C5400B34C3C /* RWUpdtePWViewController.m */,
-			);
-			name = ResetViews;
 			sourceTree = "<group>";
 		};
 		12BCD7EA1D0EE7E2008DA5DC /* View */ = {
@@ -2967,7 +2893,6 @@
 				125D99991CD0B56F00871ED4 /* Macro.pch */,
 				12F4460A1D129A1C00511336 /* LvImage */,
 				12F445EE1D12999E00511336 /* Animation */,
-				1263F69D1CDB33DF0089EC9F /* SMS_SDK */,
 				047C987D1CDC225B0080F8F1 /* UMAnalytics_Sdk_3.6.6 */,
 				120025601CE76D3800B203D4 /* RWWelcomeController.h */,
 				120025611CE76D3800B203D4 /* RWWelcomeController.m */,
@@ -3547,7 +3472,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12ACD8721D274C5400B34C3C /* RWForGotPWViewController.m in Sources */,
 				12FFF12C1CCF3C63003F58E2 /* NSManagedObject+MagicalDataImport.m in Sources */,
 				12EE61B91CE1737E00ADCC51 /* RWRequsetManager+UserLogin.m in Sources */,
 				12D1C95D1CF6E9060082F638 /* RWCountDownView.m in Sources */,
@@ -3563,7 +3487,6 @@
 				12FFF12E1CCF3C63003F58E2 /* NSManagedObject+MagicalRecord.m in Sources */,
 				1261696F1D10FAF70055438B /* UMComReplyEditViewController.m in Sources */,
 				126169221D10FAF70055438B /* UMComCommentEditView.m in Sources */,
-				12ACD86C1D274C4700B34C3C /* RWNewRegisterViewController.m in Sources */,
 				129B656B1CD9DF4C007A7224 /* RWBanners.m in Sources */,
 				126169331D10FAF70055438B /* UMAssetsCollectionCheckMarkView.m in Sources */,
 				1261692A1D10FAF70055438B /* UMImageProgressView.m in Sources */,
@@ -3576,7 +3499,6 @@
 				1261692B1D10FAF70055438B /* UMComHorizonCollectionView.m in Sources */,
 				126169361D10FAF70055438B /* UMAssetsCollectionOverlayView.m in Sources */,
 				1261691A1D10FAF70055438B /* UMComRequestTableViewController.m in Sources */,
-				12ACD8731D274C5400B34C3C /* RWUpdtePWViewController.m in Sources */,
 				1261694A1D10FAF70055438B /* UMComFindViewController.m in Sources */,
 				126169181D10FAF70055438B /* UIViewController+UMComAddition.m in Sources */,
 				126169451D10FAF70055438B /* UMComWebView.m in Sources */,
@@ -3588,7 +3510,6 @@
 				12EEAE5F1CE811B40076BACB /* RWFeedbackViewController.m in Sources */,
 				1261695A1D10FAF70055438B /* UMComFavouratesViewController.m in Sources */,
 				12EA05371CEAF9E2003FF30C /* RWRegisterNowView.m in Sources */,
-				12ACD86D1D274C4700B34C3C /* RWAboutLoginViewController.m in Sources */,
 				126169191D10FAF70055438B /* UMComNavigationController.m in Sources */,
 				12FFF1321CCF3C63003F58E2 /* NSManagedObjectContext+MagicalRecord.m in Sources */,
 				126169761D10FAF70055438B /* UMComPrivateChatTableViewController.m in Sources */,
@@ -3600,7 +3521,6 @@
 				12FFF1281CCF3C63003F58E2 /* NSObject+MagicalDataImport.m in Sources */,
 				126169351D10FAF70055438B /* UMAssetsCollectionGrid.m in Sources */,
 				122385EF1CF42B26003F98FB /* RWCountDownController.m in Sources */,
-				12EE61CA1CE1C5A900ADCC51 /* RWVerificationController.m in Sources */,
 				1261696D1D10FAF70055438B /* UMComPostReplyEditView.m in Sources */,
 				129B656A1CD9DF4C007A7224 /* RWBanners+CoreDataProperties.m in Sources */,
 				1261691D1D10FAF70055438B /* UMComActionPickerAddView.m in Sources */,
@@ -3618,7 +3538,6 @@
 				122386341CF56144003F98FB /* RWDeployManager+DateProcess.m in Sources */,
 				126169461D10FAF70055438B /* UMComImageView.m in Sources */,
 				12FFF1251CCF3C63003F58E2 /* NSAttributeDescription+MagicalDataImport.m in Sources */,
-				12EE61C41CE1BCEA00ADCC51 /* RWRegisterController.m in Sources */,
 				12ACD8671D274C3800B34C3C /* RWPhoneVerificationController.m in Sources */,
 				12FFF12F1CCF3C63003F58E2 /* NSManagedObject+MagicalRequests.m in Sources */,
 				1261695E1D10FAF70055438B /* UMComFeedTableViewController.m in Sources */,
@@ -3693,6 +3612,7 @@
 				1261697B1D10FAF70055438B /* UMComSysLikeTableViewCell.m in Sources */,
 				126169511D10FAF70055438B /* UMComEditViewController.m in Sources */,
 				125D99391CD0A06D00871ED4 /* RWSubjects.m in Sources */,
+				123D2AF81D2A59E900A5C1BF /* RWPassWordBaseViewController.m in Sources */,
 				126169831D10FAF70055438B /* UMComUserNearbyViewController.m in Sources */,
 				1261692C1D10FAF70055438B /* UMComHorizonMenuView.m in Sources */,
 				1261698C1D10FAF70055438B /* UMComErrorCode.m in Sources */,
@@ -3740,7 +3660,6 @@
 				12F6EB331CD9FA3E00CBA632 /* RWWebViewController.m in Sources */,
 				126169611D10FAF70055438B /* UMComHorizontalTableView.m in Sources */,
 				1261695D1D10FAF70055438B /* UMComFeedStyle.m in Sources */,
-				12EE61D01CE1DAE200ADCC51 /* RWSetPasswordController.m in Sources */,
 				12F446021D1299DC00511336 /* RWAnimations.m in Sources */,
 				126169211D10FAF70055438B /* UMComButton.m in Sources */,
 				12FFF1241CCF3C63003F58E2 /* MagicalImportFunctions.m in Sources */,
@@ -3772,7 +3691,6 @@
 				12FFF1391CCF3C63003F58E2 /* MagicalRecord+ErrorHandling.m in Sources */,
 				126169641D10FAF70055438B /* UMComSearchViewController.m in Sources */,
 				126169591D10FAF70055438B /* UMComSelectTopicView.m in Sources */,
-				1263F6561CDB14C10089EC9F /* RWLoginViewController.m in Sources */,
 				126169161D10FAF70055438B /* UMComShareManager.m in Sources */,
 				1261693B1D10FAF70055438B /* UMComSearchBar.m in Sources */,
 			);

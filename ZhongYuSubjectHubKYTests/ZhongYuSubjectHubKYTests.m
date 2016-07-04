@@ -81,20 +81,51 @@
 //    
 //}
 
+- (void)testResetPasswd
+{
+    RWRequsetManager *requestManager = [[RWRequsetManager alloc] init];
+    
+    requestManager.delegate = self;
+    
+    [requestManager replacePasswordWithUsername:@"18562599337"
+                                    AndPassword:@"qwertyu"
+                               verificationCode:@"7809"];
+    
+    CFRunLoopRun();
+}
+
+- (void)replacePasswordResponds:(BOOL)isSuccessed ErrorReason:(NSString *)reason
+{
+    if (!isSuccessed)
+    {
+        XCTFail(@"%@",reason);
+    }
+    
+    XCTAssertTrue(isSuccessed);
+    
+    CFRunLoopRef ref = CFRunLoopGetCurrent();
+    CFRunLoopStop(ref);
+}
+
 - (void)testLogin
 {
     RWRequsetManager *requestManager = [[RWRequsetManager alloc] init];
     
     requestManager.delegate = self;
     
-    [requestManager userinfoWithUsername:@"18773459875"
-                             AndPassword:@"18773459875"];
+    [requestManager userinfoWithUsername:@"18562599337"
+                             AndPassword:@"qwertyu"];
     
     CFRunLoopRun();
 }
 
 - (void)userLoginResponds:(BOOL)isSuccessed ErrorReason:(NSString *)reason
 {
+    if (!isSuccessed)
+    {
+        XCTFail(@"%@",reason);
+    }
+    
     XCTAssertTrue(isSuccessed);
     
     CFRunLoopRef ref = CFRunLoopGetCurrent();
@@ -107,18 +138,45 @@
     
     requestManager.delegate = self;
     
-    [requestManager registerWithUsername:@"18773459875"
-                             AndPassword:@"18773459875"];
+    [requestManager registerWithUsername:@"15239358919"
+                             AndPassword:@"qwertyu"
+                        verificationCode:@"1671"];
 
         CFRunLoopRun();
 }
 
 - (void)registerResponds:(BOOL)isSuccessed ErrorReason:(NSString *)reason
 {
+    if (!isSuccessed)
+    {
+        XCTFail(@"%@",reason);
+    }
+    
     XCTAssertTrue(isSuccessed);
+
     
     CFRunLoopRef runLoopRef = CFRunLoopGetCurrent();
     CFRunLoopStop(runLoopRef);
+}
+
+- (void)testVerificationCode
+{
+    RWRequsetManager *requestManager = [[RWRequsetManager alloc] init];
+    
+    [requestManager obtainVerificationWithPhoneNunber:@"15239358919" result:^(BOOL succeed, NSString *reason) {
+        
+        if (!succeed)
+        {
+            XCTFail(@"%@",reason);
+        }
+        
+        XCTAssertTrue(succeed);
+        
+        CFRunLoopRef runLoopRef = CFRunLoopGetCurrent();
+        CFRunLoopStop(runLoopRef);
+    }];
+    
+    CFRunLoopRun();
 }
 
 - (void)subjectHubDownLoadDidFinish:(NSArray *)subjectHubs

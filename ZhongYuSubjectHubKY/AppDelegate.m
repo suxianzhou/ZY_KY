@@ -11,8 +11,6 @@
 #import "AppDelegate+JPush.h"
 #import "MagicalRecord.h"
 #import "MobClick.h"
-#import <SMS_SDK/SMSSDK.h>
-#import <SMS_SDK/Extend/SMSSDK+AddressBookMethods.h>
 #import "UMCommunity.h"
 #import "RWRequestIndex.h"
 
@@ -57,11 +55,6 @@ static NSString *const baseName = @"ZhongYuSubjuectHub";
     
     [UMCommunity setAppKey:UMengCommunityAppkey
              withAppSecret:UMengCommunityAppSecret];
-    //MobSMS
-    [SMSSDK registerApp:SMSSDK_APPKEY
-             withSecret:SMSSDK_SECRET];
-    
-    [SMSSDK enableAppContactFriends:NO];
     
     //MobClick
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];

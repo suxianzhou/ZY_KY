@@ -12,9 +12,6 @@
 #define UMengCommunityAppkey @"5721b71de0f55a79f0002039"
 #define UMengCommunityAppSecret @"16e3187d39e29acf9f9a299df47e7bfb"
 
-#define SMSSDK_APPKEY @"131b29cb67f95"
-#define SMSSDK_SECRET @"f05560657c733e6d7ce6c11a67a0593c"
-
 #define MOB_CLICK @"5721b71de0f55a79f0002039"
 
 #define NAV_TITLE @"考研资讯"
@@ -33,14 +30,16 @@
 //>> 天王盖地虎
 #define RECEIVE_PUSH @"http://www.zhongyuedu.com/api/ky_url.php"
 //>> push
-#define LOGIN_URL @"http://www.zhongyuedu.com/api/tk_ky_login.php"
+#define LOGIN_URL @"http://api.zhongyuedu.com/tik/ky/login.php"
 //>> 登录
-#define REGISTER_URL @"http://www.zhongyuedu.com/api/tk_ky_register.php"
+#define REGISTER_URL @"http://api.zhongyuedu.com/tik/ky/tk_ky_register.php"
 //>> 注册
-#define REPLACE_PASSWORD_URL @"http://www.zhongyuedu.com/api/ky_change_pwd.php"
+#define REPLACE_PASSWORD_URL @"http://api.zhongyuedu.com/tik/ky/ky_change_pwd.php"
 //>> 重置密码
 #define ABOUT_US @"http://www.zhongyuedu.com/api/tk_aboutUs.htm"
 //>> 关于我们
 #define README @"http://www.zhongyuedu.com/app/tk_ky/tk_ios_usage.htm"
 //>> 使用说明
+#define VERIFICATION_PHONENUMBER @"http://api.zhongyuedu.com/comm/code.php"
+
 #endif /* RWRequestIndex_h */

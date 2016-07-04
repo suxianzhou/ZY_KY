@@ -621,15 +621,6 @@
             NSString *limit = [NSString stringWithFormat:@"%@",
                                                     [Json objectForKey:@"limit"]];
             
-            if (limit.integerValue >= 100)
-            {
-//                AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-//                
-//                RWTabBarViewController *tabBarController =
-//                        (RWTabBarViewController *)delegate.window.rootViewController;
-                
-            }
-            
             [[RWDeployManager defaultManager] setDeployValue:limit
                                                       forKey:TIMES_BUFFER];
         }

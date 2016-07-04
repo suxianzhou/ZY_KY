@@ -37,7 +37,8 @@
 
 @implementation ZhongYuSubjectHubKYTests
 
-- (void)setUp {
+- (void)setUp
+{
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
@@ -55,29 +56,69 @@
 //    CFRunLoopRun();
 //}
 
-- (void)testRequestIntoBase
+//- (void)testRequestIntoBase
+//{
+//    RWRequsetManager *requestManager = [[RWRequsetManager alloc] init];
+//    
+//    requestManager.delegate = self;
+//    
+////    [requestManager obtainBanners:^(NSArray *banners) {
+////       
+////        XCTAssertNotNil(banners);
+////        
+////        XCTAssertEqual(banners.count, 4);
+////        
+////        CFRunLoopRef runLoopRef = CFRunLoopGetCurrent();
+////        CFRunLoopStop(runLoopRef);
+////        
+//    }];
+//    
+//    CFRunLoopRun();
+//    
+//    [requestManager obtainServersInformation];
+//    
+//    CFRunLoopRun();
+//    
+//}
+
+- (void)testLogin
 {
     RWRequsetManager *requestManager = [[RWRequsetManager alloc] init];
     
     requestManager.delegate = self;
     
-    [requestManager obtainBanners:^(NSArray *banners) {
-       
-        XCTAssertNotNil(banners);
-        
-        XCTAssertEqual(banners.count, 4);
-        
-        CFRunLoopRef runLoopRef = CFRunLoopGetCurrent();
-        CFRunLoopStop(runLoopRef);
-        
-    }];
+    [requestManager userinfoWithUsername:@"18773459875"
+                             AndPassword:@"18773459875"];
     
     CFRunLoopRun();
+}
+
+- (void)userLoginResponds:(BOOL)isSuccessed ErrorReason:(NSString *)reason
+{
+    XCTAssertTrue(isSuccessed);
     
-    [requestManager obtainServersInformation];
+    CFRunLoopRef ref = CFRunLoopGetCurrent();
+    CFRunLoopStop(ref);
+}
+
+- (void)testRegister
+{
+    RWRequsetManager *requestManager = [[RWRequsetManager alloc] init];
     
-    CFRunLoopRun();
+    requestManager.delegate = self;
     
+    [requestManager registerWithUsername:@"18773459875"
+                             AndPassword:@"18773459875"];
+
+        CFRunLoopRun();
+}
+
+- (void)registerResponds:(BOOL)isSuccessed ErrorReason:(NSString *)reason
+{
+    XCTAssertTrue(isSuccessed);
+    
+    CFRunLoopRef runLoopRef = CFRunLoopGetCurrent();
+    CFRunLoopStop(runLoopRef);
 }
 
 - (void)subjectHubDownLoadDidFinish:(NSArray *)subjectHubs
@@ -180,7 +221,7 @@
     
 //    [self testNetworkState];
     
-    [self testRequestIntoBase];
+//    [self testRequestIntoBase];
 }
 
 - (void)testPerformanceExample {
@@ -188,7 +229,7 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
         
-        [self testRequestIntoBase];
+//        [self testRequestIntoBase];
     }];
 }
 

@@ -142,7 +142,6 @@ static NSString *const verCell = @"verCell";
        
         
     }];
-    
 }
 
 
@@ -182,145 +181,163 @@ static NSString *const verCell = @"verCell";
 #pragma mark tableView的代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0)
+    if (section == 4)
     {
-        return 4;
+        return 2;
     }
     
-    return 2;
+    return 1;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (_typePassWord==0) {
-        if (indexPath.section==0) {
+    if (_typePassWord == 0) {
+        if (indexPath.section == 0)
+        {
+                
+            RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
+            cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
+            cell.headerImage=[UIImage imageNamed:@"Loginw"];
+            cell.placeholder=@"请输入手机号";
+                
+            return cell;
+        }
+        else if (indexPath.section == 1)
+        {
+                
+            RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
+            cell.textFiled.secureTextEntry=YES;
+            cell.headerImage=[UIImage imageNamed:@"PassWordw"];
+            cell.placeholder=@"请输入密码";
+                
+            return cell;
 
-            if (indexPath.row==0) {
+        }
+        else if(indexPath.section == 2)
+        {
                 
-                RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
-                cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
-                cell.headerImage=[UIImage imageNamed:@"Loginw"];
-                cell.placeholder=@"请输入手机号";
+            RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
+            cell.headerImage=[UIImage imageNamed:@"PassWordw"];
+            cell.placeholder=@"请再次输入密码";
+            cell.textFiled.secureTextEntry=YES;
                 
-                return cell;
-            }else if (indexPath.row==1) {
+            return cell;
+        }
+        else if(indexPath.section == 3)
+        {
                 
-                RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
-                cell.textFiled.secureTextEntry=YES;
-                cell.headerImage=[UIImage imageNamed:@"PassWordw"];
-                cell.placeholder=@"请输入密码";
+            RWVerificationCodeCell * cell=[tableView dequeueReusableCellWithIdentifier:verCell forIndexPath:indexPath];
                 
-                return cell;
+            cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
+                
+            UIButton * button=[UIButton buttonWithType:(UIButtonTypeCustom)];
 
-            }else if(indexPath.row==2){
+            button.frame=CGRectMake(self.view.bounds.size.width-85, 11, 70, 28);
+            [button setTitle:@"获取验证码" forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:12];
+            button.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.4];
+            [button addTarget:self action:@selector(buttonClickwithIdentify:) forControlEvents:UIControlEventTouchUpInside];
+            button.layer.cornerRadius = 10;
+            [cell addSubview:button];
                 
-                RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
-                cell.headerImage=[UIImage imageNamed:@"PassWordw"];
-                cell.placeholder=@"请再次输入密码";
-                cell.textFiled.secureTextEntry=YES;
-                
-                return cell;
-            }else{
-                
-                RWVerificationCodeCell * cell=[tableView dequeueReusableCellWithIdentifier:verCell forIndexPath:indexPath];
-                
-                cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
-                
-                UIButton * button=[UIButton buttonWithType:(UIButtonTypeCustom)];
-
-                button.frame=CGRectMake(self.view.bounds.size.width-85, 11, 70, 28);
-                [button setTitle:@"获取验证码" forState:UIControlStateNormal];
-                button.titleLabel.font = [UIFont systemFontOfSize:12];
-                button.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.4];
-                [button addTarget:self action:@selector(buttonClickwithIdentify:) forControlEvents:UIControlEventTouchUpInside];
-                button.layer.cornerRadius = 6;
-                [cell addSubview:button];
-                
-                return cell;
-            }
-            
-        }else{
+            return cell;
+        }
+        else
+        {
             RWButtonCell * cell=[tableView dequeueReusableCellWithIdentifier:buttonCell forIndexPath:indexPath];
             cell.delegate = self;
             
-            if(indexPath.row==0){
+            if(indexPath.row==0)
+            {
                 cell.title=@"上一步";
                 cell.button.backgroundColor=[UIColor colorWithWhite:0.f alpha:0.4];
                 cell.button.tag=1000;
-            }else{
+            }else
+            {
                 cell.title=@"完成注册";
                 cell.button.backgroundColor=[UIColor colorWithWhite:0.f alpha:0.4];
                 cell.button.tag=1001;
             }
+            
             return cell;
         }
         
-    }else{
-        if (indexPath.section==0) {
-            
-            if (indexPath.row==0)
-            {
-                RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
+    }
+    else
+    {
+        if (indexPath.section == 0)
+        {
+            RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
                 
-                cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
-                cell.headerImage=[UIImage imageNamed:@"Loginw"];
-                cell.placeholder=@"请输入手机号";
+            cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
+            cell.headerImage=[UIImage imageNamed:@"Loginw"];
+            cell.placeholder=@"请输入手机号";
                 
-                 return cell;
-            }else if (indexPath.row==1) {
+            return cell;
+        }
+        else if (indexPath.section == 1)
+        {
                 
-                RWVerificationCodeCell * cell=[tableView dequeueReusableCellWithIdentifier:verCell forIndexPath:indexPath];
+            RWVerificationCodeCell * cell=[tableView dequeueReusableCellWithIdentifier:verCell forIndexPath:indexPath];
                 
-                cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
+            cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
                 
-                UIButton * button=[UIButton buttonWithType:(UIButtonTypeCustom)];
+            UIButton * button=[UIButton buttonWithType:(UIButtonTypeCustom)];
                 
-                button.frame=CGRectMake(self.view.bounds.size.width-85, 11, 70, 28);
-                [button setTitle:@"获取验证码" forState:UIControlStateNormal];
-                button.titleLabel.font = [UIFont systemFontOfSize:12];
-                button.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.4];
-                [button addTarget:self action:@selector(buttonClickwithIdentify:) forControlEvents:UIControlEventTouchUpInside];
-                button.layer.cornerRadius = 6;
-                [cell addSubview:button];
+            button.frame=CGRectMake(self.view.bounds.size.width-85, 11, 70, 28);
+            [button setTitle:@"获取验证码" forState:UIControlStateNormal];
+            button.titleLabel.font = [UIFont systemFontOfSize:12];
+            button.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.4];
+            [button addTarget:self action:@selector(buttonClickwithIdentify:) forControlEvents:UIControlEventTouchUpInside];
+            button.layer.cornerRadius = 10;
+            [cell addSubview:button];
                 
-                return cell;
+            return cell;
+        }
+        else if (indexPath.section == 2)
+        {
+            RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
                 
-            }else if(indexPath.row==2){
-                RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
+            cell.headerImage=[UIImage imageNamed:@"PassWordw"];
+            cell.placeholder=@"请输入密码";
+            cell.textFiled.secureTextEntry=YES;
                 
-                cell.headerImage=[UIImage imageNamed:@"PassWordw"];
-                cell.placeholder=@"请输入密码";
-                cell.textFiled.secureTextEntry=YES;
-                
-                 return cell;
-            }else{
-                RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
-                cell.textFiled.secureTextEntry=YES;
-                cell.headerImage=[UIImage imageNamed:@"PassWordw"];
-                cell.placeholder=@"请再次输入密码";
-                return cell;
-            }
-        }else{
+            return cell;
+        }
+        else if (indexPath.section == 3)
+        {
+            RWTextFiledCell * cell=[tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
+            cell.textFiled.secureTextEntry=YES;
+            cell.headerImage=[UIImage imageNamed:@"PassWordw"];
+            cell.placeholder=@"请再次输入密码";
+            return cell;
+        }
+        else
+        {
             RWButtonCell * cell=[tableView dequeueReusableCellWithIdentifier:buttonCell forIndexPath:indexPath];
-                cell.delegate = self;
-            if(indexPath.row==0){
+            cell.delegate = self;
+            
+            if(indexPath.row==0)
+            {
                 cell.title=@"上一步";
                 cell.button.backgroundColor=[UIColor colorWithWhite:0.f alpha:0.4];
                 cell.button.tag=1002;
-            }else{
+            }
+            else
+            {
                 cell.title=@"提交修改";
                 cell.button.backgroundColor=[UIColor colorWithWhite:0.f alpha:0.4];
                 cell.button.tag=1003;
             }
+            
             return cell;
         }
-        
     }
 }
 #pragma mark   点击下方两个按钮要实现的方法
@@ -340,11 +357,11 @@ static NSString *const verCell = @"verCell";
 {
     RWTextFiledCell *index0 = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
     
-    RWTextFiledCell *index1 = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    RWTextFiledCell *index1 = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     
-    RWTextFiledCell *index2 = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    RWTextFiledCell *index2 = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
     
-    RWTextFiledCell *index3 = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    RWTextFiledCell *index3 = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
     
     NSString *username = index0.textFiled.text;
     NSString *password = isRegister?index1.textFiled.text:index2.textFiled.text;
@@ -448,8 +465,6 @@ static NSString *const verCell = @"verCell";
         
         clickBtn=button;
         
-        
-        
         _requestManager.delegate = self;
         
         [_requestManager obtainVerificationWithPhoneNunber:userName.textFiled.text result:^(BOOL succeed, NSString *reason)
@@ -511,7 +526,27 @@ static NSString *const verCell = @"verCell";
         return self.view.frame.size.height / 2.5 - 55 * 3;
     }
     
-    return  40;
+    if (_typePassWord == TypeRegisterPassWord)
+    {
+        if (section == 3)
+        {
+            return 20;
+        }
+    }
+    else
+    {
+        if (section == 2)
+        {
+            return 20;
+        }
+    }
+    
+    if (section == 4)
+    {
+        return  40;
+    }
+    
+    return 3;
 }
 /**
  *  组透视图
@@ -534,7 +569,7 @@ static NSString *const verCell = @"verCell";
         titleLabel.text = @"ZHONGYU · 中域";
         titleLabel.numberOfLines = 0;
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.font = [UIFont fontWithName:@"STXingkai-SC-Bold"size:25];
+        titleLabel.font = [UIFont fontWithName:@"STXingkai-SC-Bold"size:20];
         titleLabel.textColor = [UIColor blackColor];
         titleLabel.shadowOffset = CGSizeMake(1, 1);
         titleLabel.shadowColor = [UIColor goldColor];
@@ -543,10 +578,10 @@ static NSString *const verCell = @"verCell";
         
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             
-            make.left.equalTo(backView.mas_left).offset(40);
-            make.right.equalTo(backView.mas_right).offset(-40);
-            make.top.equalTo(backView.mas_top).offset(20);
-            make.bottom.equalTo(backView.mas_bottom).offset(-20);
+            make.left.equalTo(backView.mas_left).offset(0);
+            make.right.equalTo(backView.mas_right).offset(0);
+            make.top.equalTo(backView.mas_top).offset(0);
+            make.bottom.equalTo(backView.mas_bottom).offset(0);
         }];
         
         return backView;
@@ -554,14 +589,14 @@ static NSString *const verCell = @"verCell";
     
     return nil;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-    if (section==1) {
-        
-        
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
+{
+    if (section == 4)
+    {
         return  self.view.frame.size.height*0.35;
     }
     
-    return 0;
+    return 1;
     
 }
 /**
@@ -589,19 +624,19 @@ static NSString *const verCell = @"verCell";
         [phoneFiled.textFiled resignFirstResponder];
     }
     
-    RWTextFiledCell *wordFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    RWTextFiledCell *wordFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     
     if (wordFiled.textFiled.isFirstResponder)
     {
         [wordFiled.textFiled resignFirstResponder];
     }
-    RWTextFiledCell *passwordFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:2 inSection:0]];
+    RWTextFiledCell *passwordFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
     
     if (passwordFiled.textFiled.isFirstResponder)
     {
         [passwordFiled.textFiled resignFirstResponder];
     }
-    RWTextFiledCell *passwordagainFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+    RWTextFiledCell *passwordagainFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]];
     
     if (passwordagainFiled.textFiled.isFirstResponder)
     {

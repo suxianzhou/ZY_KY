@@ -78,8 +78,6 @@ static NSString *const buttonCell = @"buttonCell";
  */
 - (void)keyboardWasShown:(NSNotification *) notif
 {
-    
-    
     NSDictionary *info = [notif userInfo];
     
     NSValue *value = [info objectForKey:UIKeyboardFrameBeginUserInfoKey];
@@ -115,7 +113,7 @@ static NSString *const buttonCell = @"buttonCell";
             self.navigationController.view.center = viewPt;
         }];
     }
-    RwLoginButtonsCell * buttonsCell=[viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    RwLoginButtonsCell * buttonsCell=[viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
     buttonsCell.userInteractionEnabled=NO;
 }
 /**
@@ -128,7 +126,7 @@ static NSString *const buttonCell = @"buttonCell";
         
         self.navigationController.view.center = viewCenter;
     }];
-    RwLoginButtonsCell * buttonsCell=[viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
+    RwLoginButtonsCell * buttonsCell=[viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
     buttonsCell.userInteractionEnabled=YES;
     
 }
@@ -183,7 +181,7 @@ static NSString *const buttonCell = @"buttonCell";
         
     }
     
-    RWTextFiledCell *passwordFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    RWTextFiledCell *passwordFiled = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     
     if (passwordFiled.textFiled.isFirstResponder)
     {
@@ -231,16 +229,11 @@ static NSString *const buttonCell = @"buttonCell";
 #pragma mark tableView的代理方法
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0)
-    {
-        return 2;
-    }
-    
     return 1;
 }
 
@@ -251,32 +244,31 @@ static NSString *const buttonCell = @"buttonCell";
     {
         RWTextFiledCell *cell = [tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
         
+        cell.delegate = self;
         
+        cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
+        cell.headerImage = [UIImage imageNamed:@"Loginw"];
+        cell.placeholder = @" 请输入手机号";
+        
+        return cell;
+    }
+    else if (indexPath.section == 1)
+    {
+        RWTextFiledCell *cell = [tableView dequeueReusableCellWithIdentifier:textFileCell forIndexPath:indexPath];
         
         cell.delegate = self;
         
-        if (indexPath.row == 0)
-        {
-            cell.textFiled.keyboardType=UIKeyboardTypeDecimalPad;
-            cell.headerImage = [UIImage imageNamed:@"Loginw"];
-            cell.placeholder = @" 请输入手机号";
-        }
-        else
-        {
-            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            cell.headerImage = [UIImage imageNamed:@"PassWordw"];
-            cell.placeholder = @" 请输入密码";
-            cell.textFiled.secureTextEntry=YES;
-            button.frame = CGRectMake(self.view.bounds.size.width - 75 , 12.5, 60, 25);
-            [button setTitle:@"忘记密码" forState:UIControlStateNormal];
-            button.titleLabel.font = [UIFont systemFontOfSize:12];
-            button.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.4];
-            [button addTarget:self action:@selector(buttonClickWithPW:) forControlEvents:UIControlEventTouchUpInside];
-            button.layer.cornerRadius = 8;
-            [cell addSubview:button];
-
-           
-        }
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        cell.headerImage = [UIImage imageNamed:@"PassWordw"];
+        cell.placeholder = @" 请输入密码";
+        cell.textFiled.secureTextEntry=YES;
+        button.frame = CGRectMake(self.view.bounds.size.width-85, 11, 70, 28);
+        [button setTitle:@"忘记密码" forState:UIControlStateNormal];
+        button.titleLabel.font = [UIFont systemFontOfSize:12];
+        button.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.4];
+        [button addTarget:self action:@selector(buttonClickWithPW:) forControlEvents:UIControlEventTouchUpInside];
+        button.layer.cornerRadius = 10;
+        [cell addSubview:button];
         
         return cell;
     }
@@ -326,15 +318,18 @@ static NSString *const buttonCell = @"buttonCell";
         return self.view.frame.size.height / 2.5 - 55 * 2;
     }
     
-    return  40;
+    if (section == 2)
+    {
+        return  40;
+    }
+    
+    return 3;
 }
 /**
  *  组透视图
  */
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    
-    
     if (section == 0)
     {
         UIView *backView = [[UIView alloc]init];
@@ -369,17 +364,17 @@ static NSString *const buttonCell = @"buttonCell";
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
-    if (section==1)
+    if (section == 2)
     {
         return  self.view.frame.size.height*0.35;
     }
     
-    return 0;
+    return 1;
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    
-    if(section==1)
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{    
+    if(section == 2)
     {
         UIView *backView = [[UIView alloc]init];
         
@@ -501,7 +496,7 @@ static NSString *const buttonCell = @"buttonCell";
     
     NSString *phoneNumber = textCell.textFiled.text;
 
-    __block RWTextFiledCell *verCell = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0]];
+    __block RWTextFiledCell *verCell = [viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
     
     NSString *userPassword = verCell.textFiled.text;
     

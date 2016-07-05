@@ -74,10 +74,10 @@
         [deployManager setDeployValue:RWNOTFOUND forKey:TEST_CLOCK];
     }
     
-//    [self.deployInformation addObserver:self
-//                             forKeyPath:TEST_CLOCK
-//                                options:NSKeyValueObservingOptionNew
-//                                context:nil];
+    [self.deployInformation addObserver:self
+                             forKeyPath:TEST_CLOCK
+                                options:NSKeyValueObservingOptionNew
+                                context:nil];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context

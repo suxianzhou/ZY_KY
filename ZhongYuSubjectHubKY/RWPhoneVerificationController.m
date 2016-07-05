@@ -43,6 +43,9 @@
 @property (nonatomic,strong)NSString *username;
 
 @property(nonatomic,strong)NSString * password;
+
+@property (nonatomic,assign)CGFloat *height;
+
 @end
 
 static NSString *const textFileCell = @"textFileCell";
@@ -60,7 +63,20 @@ static NSString *const buttonCell = @"buttonCell";
 @synthesize contrast;
 @synthesize username;
 @synthesize password;
+@synthesize height;
 
+- (void)initItemHeight
+{
+    CGFloat item1 = self.view.frame.size.height / 2.5 - 55 * 3 + 50;
+    CGFloat item2 = item1 + 53;
+    
+    CGFloat *items = (CGFloat *)malloc(sizeof(CGFloat) * 2);
+    
+    items[0] = item1;
+    items[1] = item2;
+    
+    height = items;
+}
 
 #pragma mark AutoSize Keyboard
 /**
@@ -84,51 +100,35 @@ static NSString *const buttonCell = @"buttonCell";
     
     CGSize keyboardSize = [value CGRectValue].size;
     
-    NSInteger gap = self.view.frame.size.height - keyboardSize.height;
+    CGFloat residue = self.view.frame.size.height - keyboardSize.height;
     
-    NSInteger height;
+    int item = 3;
+    item = [facePlaceHolder isEqualToString:@"请输入手机号"]?0:item;
+    item = [facePlaceHolder isEqualToString:@"请输入密码"]?1:item;
     
-    if ([facePlaceHolder isEqualToString:@"请输入手机号"])
-    {
-        height = self.view.frame.size.height *0.3 + 50 * 4;
-    }
-    else
-    {
-        height = self.view.frame.size.height *0.3 + 50 * 4;
-    }
-    
-    if (self.navigationController.view.center.y == viewCenter.y + gap - height)
+    if (item == 3)
     {
         return;
     }
     
-    if (gap - height < 0)
+    if (residue - height[item] < 0)
     {
         [UIView animateWithDuration:0.3 animations:^{
             
-            CGPoint viewPt =  self.navigationController.view.center;
+            CGPoint offset = viewList.contentOffset;
+            offset.y -= (residue - height[item]);
             
-            viewPt.y += gap - height;
-            
-            self.navigationController.view.center = viewPt;
+            viewList.contentOffset = offset;
         }];
     }
-    RwLoginButtonsCell * buttonsCell=[viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-    buttonsCell.userInteractionEnabled=NO;
 }
-/**
- *   在键盘将要隐藏时
- */
+
 - (void) keyboardWasHidden:(NSNotification *) notif
 {
     [UIView animateWithDuration:0.3 animations:^{
         
-        
-        self.navigationController.view.center = viewCenter;
+        viewList.contentOffset = CGPointMake(0, -20);
     }];
-    RwLoginButtonsCell * buttonsCell=[viewList cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:2]];
-    buttonsCell.userInteractionEnabled=YES;
-    
 }
 
 #pragma mark - views
@@ -302,13 +302,14 @@ static NSString *const buttonCell = @"buttonCell";
 
 - (void)textFiledCell:(RWTextFiledCell *)cell DidBeginEditing:(NSString *)placeholder
 {
-    facePlaceHolder = placeholder;
+    viewList.contentOffset = CGPointMake(0, -20);
     
+    facePlaceHolder = placeholder;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 55;
+    return 50;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -421,6 +422,7 @@ static NSString *const buttonCell = @"buttonCell";
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
+    
     return YES;
 }
 #pragma mark - Life Cycle
@@ -428,8 +430,6 @@ static NSString *const buttonCell = @"buttonCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    MAIN_NAV
     
     contrast = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
     
@@ -439,32 +439,28 @@ static NSString *const buttonCell = @"buttonCell";
     
     countDown = 60;
     
-    self.navigationController.navigationBar.barTintColor = [UIColor whiteColor];
     self.view.backgroundColor =[UIColor whiteColor];
-    self.title = @"登录";
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor]};
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBarHidden = YES;
     
     // Do any additional setup after loading the view.
     
-    [self registerForKeyboardNotifications];
     [self initViewList];
     [self addTapGesture];
-
-    
 }
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     
-    self.navigationController.navigationBarHidden=YES;
+    [self registerForKeyboardNotifications];
 }
 
 -(void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
     
-    self.navigationController.navigationBarHidden=NO;
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter ] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -500,6 +496,9 @@ static NSString *const buttonCell = @"buttonCell";
     
     NSString *userPassword = verCell.textFiled.text;
     
+    [textCell.textFiled resignFirstResponder];
+    [verCell.textFiled resignFirstResponder];
+    
     
     if ([requestManager verificationPhoneNumber:phoneNumber])
     {
@@ -519,9 +518,7 @@ static NSString *const buttonCell = @"buttonCell";
         {
             
             [RWRequsetManager warningToViewController:self
-             
                                                 Title:@"密码输入错误"
-             
                                                 Click:^
             {
                                                     
@@ -530,38 +527,22 @@ static NSString *const buttonCell = @"buttonCell";
                 [textCell.textFiled becomeFirstResponder];
             }];
         }
-
-    
-    
-        
-
-    }else{
-        
-        
+    }
+    else
+    {
         [RWRequsetManager warningToViewController:self
                                             Title:@"手机号输入有误,请重新输入"
-                                            Click:^{
-                                                
-                                                verCell.textFiled.text = nil;
-                                                
-                                                [verCell
-                                                 .textFiled becomeFirstResponder];
-                                            }];
-
-        
-        
+                                            Click:^
+        {
+            verCell.textFiled.text = nil;
+            [verCell.textFiled becomeFirstResponder];
+        }];
     }
 }
 
 - (void)dismissView
 {
     [self.navigationController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)dealloc {
-    
-    [[NSNotificationCenter defaultCenter] removeObserver:UIKeyboardWillShowNotification name:nil object:self];
-    [[NSNotificationCenter defaultCenter ] removeObserver:UIKeyboardWillHideNotification name:nil object:self];
 }
 
 - (void)userLoginResponds:(BOOL)isSuccessed ErrorReason:(NSString *)reason
@@ -591,6 +572,11 @@ static NSString *const buttonCell = @"buttonCell";
     [self.view.layer addAnimation:transition forKey:nil];
     
     [super dismissViewControllerAnimated:flag completion:completion];
+}
+
+- (void)dealloc
+{
+    free(height);
 }
 
 @end

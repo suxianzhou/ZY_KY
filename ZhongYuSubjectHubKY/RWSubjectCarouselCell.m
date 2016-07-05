@@ -103,8 +103,6 @@ static NSString *const carouselCell = @"carouselCell";
             imagePageBar.currentPage = 0;
             imagePageBar.currentPageIndicatorTintColor = [UIColor whiteColor];
         }
-        
-
     }
 }
 

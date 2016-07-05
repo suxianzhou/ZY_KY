@@ -129,7 +129,7 @@
         
         NSDictionary *Json = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil];
         
-        if ([[Json objectForKey:@"resultCode"] integerValue] == 0)
+        if ([[Json objectForKey:@"resultcode"] integerValue] == 0)
         {
             [self.delegate replacePasswordResponds:YES ErrorReason:nil];
         }

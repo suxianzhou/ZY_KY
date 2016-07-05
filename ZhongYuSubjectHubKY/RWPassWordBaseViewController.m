@@ -603,13 +603,13 @@ static NSString *const verCell = @"verCell";
  *  添加一个点击手势
  */
 
--(void)addTapGesture{
+-(void)addTapGesture
+{
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(releaseFirstResponder)];
     
     tap.numberOfTapsRequired = 1;
     
     [viewList addGestureRecognizer:tap];
-    
 }
 
 /**
@@ -655,6 +655,5 @@ static NSString *const verCell = @"verCell";
 {
     [RWRequsetManager warningToViewController:self Title:@"网络连接失败" Click:nil];
 }
-
 
 @end

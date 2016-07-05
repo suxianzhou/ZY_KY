@@ -26,7 +26,7 @@
 //>> 推荐列表
 #define UPDATE_USERNAME @"http://www.zhongyuedu.com/api/yy_ky_post.php"
 //>> 上传
-#define EXPERIENCE_TIMES_URL @"http://www.zhongyuedu.com/api/jin_limit.php"
+#define EXPERIENCE_TIMES_URL @"http://api.zhongyuedu.com/tik/ky/ky_limit.php"
 //>> 天王盖地虎
 #define RECEIVE_PUSH @"http://www.zhongyuedu.com/api/ky_url.php"
 //>> push

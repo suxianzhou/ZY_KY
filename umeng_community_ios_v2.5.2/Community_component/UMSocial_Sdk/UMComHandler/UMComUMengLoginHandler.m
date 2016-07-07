@@ -10,8 +10,8 @@
 #import "UMSocial.h"
 #import "UMSocialSinaSSOHandler.h"
 #import "UMComNavigationController.h"
-#import "RWLoginViewController.h"
 #import "RWRegisterViewController.h"
+
 @interface UMComUMengLoginHandler()<UMSocialUIDelegate>
 
 

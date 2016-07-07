@@ -8,7 +8,6 @@
 //
 
 #import "RWInformationViewController.h"
-#import "RWLoginViewController.h"
 #import "RWRequsetManager.h"
 #import "RWCompleteCutView.h"
 #import "RWClassListModel.h"

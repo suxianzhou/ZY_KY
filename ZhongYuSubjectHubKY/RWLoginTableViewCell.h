@@ -82,3 +82,11 @@
 
 @end
 
+@interface RWVerificationCodeCell : UITableViewCell
+
+@property (nonatomic,assign)id<RWTextFiledCellDelegate> delegate;
+
+@property (nonatomic,strong,readonly)UITextField *textFiled;
+
+@end
+

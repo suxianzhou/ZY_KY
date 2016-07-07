@@ -463,6 +463,11 @@
     [backView addSubview:textFiled];
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.delegate textFiledCell:nil DidBeginEditing:nil];
+}
+
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];

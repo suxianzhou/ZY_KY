@@ -44,8 +44,6 @@
 
 @property (nonatomic,strong)UIButton *button;
 
-//@property(nonatomic,strong)UIButton *LoginButton;
-
 @end
 
 /**

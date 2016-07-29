@@ -16,7 +16,7 @@
 
 #define NAV_TITLE @"考研资讯"
 
-#define MAIN_INDEX [NSURL URLWithString:@"http://www.zhongyuedu.com/tgm/test/test12/index.html"]
+#define MAIN_INDEX [NSURL URLWithString:@"http://kaoyan.zhongyuedu.com/mobile/list.php?fid=66"]
 //>> 资讯
 #define SERVERS_INDEX @"http://www.zhongyuedu.com/api/tk_ky_examtype.php"
 //>> 题库目录
